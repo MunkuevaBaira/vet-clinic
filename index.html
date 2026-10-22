@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ВетКлиника — Забота о ваших питомцах</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ШАПКА -->
+  <header>
+    <div class="container header-content">
+      <div class="logo">🐾 ВетКлиника</div>
+      <nav>
+        <a href="#services">Услуги</a>
+        <a href="#doctors">Врачи</a>
+        <a href="#appointment">Запись</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section class="hero">
+      <div class="container hero-content">
+        <h1>Здоровье вашего питомца — наша забота</h1>
+        <p>Современная ветеринарная клиника с опытными специалистами и новейшим оборудованием.</p>
+        <a href="#appointment" class="btn">Записаться на прием</a>
+      </div>
+    </section>
+
+    <!-- УСЛУГИ (Интерактивные) -->
+    <section id="services" class="container">
+      <h2>Наши услуги</h2>
+      <div class="grid">
+        <div class="card" data-service="Терапия">
+          <h3>🩺 Терапия</h3>
+          <p>Осмотр, диагностика и лечение внутренних болезней.</p>
+          <button class="btn service-btn">Записаться</button>
+        </div>
+        <div class="card" data-service="Вакцинация">
+          <h3>💉 Вакцинация</h3>
+          <p>Комплексные прививки для собак и кошек по графику.</p>
+          <button class="btn service-btn">Записаться</button>
+        </div>
+        <div class="card" data-service="Груминг">
+          <h3>✂️ Груминг</h3>
+          <p>Стрижка, купание и уход за шерстью вашего любимца.</p>
+          <button class="btn service-btn">Записаться</button>
+        </div>
+        <div class="card" data-service="Стоматология">
+          <h3>🦷 Стоматология</h3>
+          <p>Чистка зубов, удаление камня и лечение полости рта.</p>
+          <button class="btn service-btn">Записаться</button>
+        </div>
+      </div>
+    </section>
+
+        <!-- ВРАЧИ -->
+    <section id="doctors" class="container bg-light">
+      <h2>Наши специалисты</h2>
+      <div class="grid">
+        <!-- Врач 1 -->
+        <div class="card doctor-card">
+          <!-- Если у тебя есть фото, загрузи его в папку img и напиши: src="img/doctor1.jpg" -->
+          <img src="img/doctor1.jpg" alt="Иванов Иван" class="doctor-photo" onerror="this.src='https://via.placeholder.com/150x150/c8e6c9/2e7d32?text=Фото'">
+          <h3>Иванов Иван</h3>
+          <p class="doctor-role">Главный врач, ветеринарный терапевт</p>
+          <ul class="doctor-details">
+            <li><strong>Стаж:</strong> 15 лет</li>
+            <li><strong>Специализация:</strong> Внутренние болезни, кардиология</li>
+            <li><strong>Образование:</strong> МГАВМиБ им. К.И. Скрябина</li>
+          </ul>
+        </div>
+
+        <!-- Врач 2 -->
+        <div class="card doctor-card">
+          <img src="img/doctor2.jpg" alt="Смирнова Анна" class="doctor-photo" onerror="this.src='https://via.placeholder.com/150x150/c8e6c9/2e7d32?text=Фото'">
+          <h3>Смирнова Анна</h3>
+          <p class="doctor-role">Ветеринарный хирург</p>
+          <ul class="doctor-details">
+            <li><strong>Стаж:</strong> 8 лет</li>
+            <li><strong>Специализация:</strong> Хирургия мелких домашних животных</li>
+            <li><strong>Образование:</strong> СПбГАВМ</li>
+          </ul>
+        </div>
+
+        <!-- Врач 3 -->
+        <div class="card doctor-card">
+          <img src="img/doctor3.jpg" alt="Петров Олег" class="doctor-photo" onerror="this.src='https://via.placeholder.com/150x150/c8e6c9/2e7d32?text=Фото'">
+          <h3>Петров Олег</h3>
+          <p class="doctor-role">Дерматолог, грумер</p>
+          <ul class="doctor-details">
+            <li><strong>Стаж:</strong> 6 лет</li>
+            <li><strong>Специализация:</strong> Дерматология, уход за шерстью</li>
+            <li><strong>Образование:</strong> Казанская ГАВМ</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ФОРМА ЗАПИСИ С ВАЛИДАЦИЕЙ -->
+    <section id="appointment" class="container">
+      <h2>Записаться на прием</h2>
+      <form id="appointment-form" novalidate>
+        
+        <div class="form-group">
+          <label for="service">Выберите услугу *</label>
+          <select id="service">
+            <option value="">-- Выберите услугу --</option>
+            <option value="Терапия">Терапия</option>
+            <option value="Вакцинация">Вакцинация</option>
+            <option value="Груминг">Груминг</option>
+            <option value="Стоматология">Стоматология</option>
+          </select>
+          <span class="error-msg" id="service-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Ваше имя *</label>
+          <input type="text" id="name" placeholder="Например: Иван">
+          <span class="error-msg" id="name-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Телефон *</label>
+          <input type="tel" id="phone" placeholder="+7 (999) 123-45-67">
+          <span class="error-msg" id="phone-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Дата приема *</label>
+          <input type="date" id="date">
+          <span class="error-msg" id="date-error"></span>
+        </div>
+
+        <button type="submit" class="btn">Отправить заявку</button>
+        <p id="success-msg" class="success-msg hidden">Спасибо! Ваша заявка принята. Мы вам перезвоним.</p>
+      </form>
+    </section>
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer id="contacts">
+    <div class="container footer-content">
+      <div>
+        <h3>🐾 ВетКлиника</h3>
+        <p>Забота о питомцах с 2015 года.</p>
+      </div>
+      <div>
+        <h3>Контакты</h3>
+        <p>📍 г. Москва, ул. Зоологическая, д. 10</p>
+        <p>📞 +7 (495) 123-45-67</p>
+        <p>✉️ info@vetclinic.ru</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© <span id="year"></span> ВетКлиника. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
